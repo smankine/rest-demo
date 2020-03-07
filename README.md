@@ -1,5 +1,5 @@
 # Design considerations
-I tried to complete this project by addressing all the requirements without unnecessarily complicating the code by adding requirements that could have been needed or useful but were not explicitly stated in the requirements (such as currency unit operations, product counts in orders etc.). I chose to use H2 in-memory database as it is extremely easy to setup and there was no requirement for more permanent persistence. In case that it is needed, with a minor configuration change, H2 can also write to the local hard drive.
+I tried to complete this project by addressing all the requirements without unnecessarily complicating the code by adding features that could have been needed or useful but were not explicitly stated in the requirements (such as currency unit operations, product counts in orders etc.). I chose to use H2 in-memory database as it is extremely easy to setup and there was no requirement for more permanent persistence. In case that it is needed, with a minor configuration change, H2 can also write to the local hard drive.
 
 # Setup
   * install Java >= 8
@@ -8,13 +8,13 @@ I tried to complete this project by addressing all the requirements without unne
 
 # Run
 * Clone the project
-* To run the project you can simply run the included jar by typing into a command line from the root directory
+* To run the project you can simply run the included jar by typing the following into a command line from the root directory
 ```
 cd rest-demo/
 java -jar rest-demo-0.0.1-SNAPSHOT.jar
 ```
-* after successfully launching, visit http://localhost:8080/api/product to check that it is running, should return an empty array
-* a postman collection is available in the etc/ folder
+* after successfully launching, visit http://localhost:8080/api/product to check that it is running, this should return an empty array
+* A postman collection is available in the etc/ folder, if that is your thing
 * Alternatively, you can run the project with gradle task ```'bootRun'```
 
 # API Documentation
