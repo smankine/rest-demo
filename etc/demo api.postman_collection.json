@@ -1,0 +1,309 @@
+{
+	"info": {
+		"_postman_id": "58acc25b-bdd0-40d9-bd73-ed26b8735919",
+		"name": "demo api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createProduct",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1aad7fc4-c1ff-4c98-b2f3-04265d9103ee",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.environment.set(\"id\", jsonData.id);",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"salla\",\n\t\"price\":123.0\n\t\n}"
+				},
+				"url": {
+					"raw": "{{url}}/product",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createOrder (var)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1aad7fc4-c1ff-4c98-b2f3-04265d9103ee",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.environment.set(\"orderid\", jsonData.id);",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"buyerEmail\":\"salla@test.com\",\n\t\"items\":[{{id}}]\n\t\n}"
+				},
+				"url": {
+					"raw": "{{url}}/order",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createOrder",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1aad7fc4-c1ff-4c98-b2f3-04265d9103ee",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.environment.set(\"orderid\", jsonData.id);",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"buyerEmail\":\"salla@test.com\",\n\t\"items\":[1,2]\n\t\n}"
+				},
+				"url": {
+					"raw": "{{url}}/order",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateProduct",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\t\"name\":\"testproduct2\",\n    \"price\":1232222.0\n\t\n}"
+				},
+				"url": {
+					"raw": "{{url}}/product/33",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product",
+						"33"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateProduct (var)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"testproduct2\",\n    \"price\":1232222.0\n\t\n}"
+				},
+				"url": {
+					"raw": "{{url}}/product/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllProducts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/product",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProductById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/product/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProductById (Var)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/product/{{id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"product",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOrdersbyDates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/order?startDate=2019-09-22T10:00:00&endDate=2022-09-22T10:00:00",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"order"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2019-09-22T10:00:00"
+						},
+						{
+							"key": "endDate",
+							"value": "2022-09-22T10:00:00"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "5e17c55d-51df-4d77-839b-ee882c52c65c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "13320e70-bd6f-4008-a3fa-af548954ecc9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

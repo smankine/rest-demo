@@ -1,0 +1,8 @@
+---
+applications:
+- name: rest-demo
+  memory: 256M
+  instances: 1
+  host: rest-demo
+  domain: salla.com
+  path: build/libs/rest-demo-0.1.0.jar
