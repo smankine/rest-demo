@@ -1,6 +1,8 @@
 # Design considerations
 I tried to complete this project by addressing all the requirements without unnecessarily complicating the code by adding features that could have been needed or useful but were not explicitly stated in the requirements (such as currency unit operations, product counts in orders etc.). I chose to use H2 in-memory database as it is extremely easy to setup and there was no requirement for more permanent persistence. In case that it is needed, with a minor configuration change, H2 can also write to the local hard drive.
 
+The error handling of the system is extremely important and basically nothing should leave the API without being caught and processed to the format decided. I've tried to use a very minimalistic approach, using standard error codes and only adding further information if there is something that the client can do to fix the problem. All other unexpected exceptions just return a clean 500 without disclosing what went wrong behind the scene. This can be thought of as a security feature so that a potential malicious agent can’t infer from various error responses how the system functions internally.
+
 # Setup
   * install Java >= 8
   * If you want to run/build via gradle, then gradle is needed
